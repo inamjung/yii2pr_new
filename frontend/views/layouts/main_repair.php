@@ -66,6 +66,18 @@ $userrepair = \frontend\modules\repair\models\Repairs::find()->count();
                                                     "url" => Yii::$app->homeUrl,
                                                     "icon" => "home"
                                                 ],
+                                                [
+                                                    "label" => "ตั้งค่าระบบ",
+                                                    "url" => "#",
+                                                    "icon" => "cog",
+                                                    "items" => [
+                                                            [
+                                                            "label" => "จัดการผู้ใช้งาน",
+                                                            "url" => ["/users/index"],  
+                                                        ],
+                                                            
+                                                    ],
+                                                ],
                                                     [
                                                     "label" => "ระบบแจ้งซ่อม",
                                                     "url" => "#",
@@ -182,10 +194,10 @@ $userrepair = \frontend\modules\repair\models\Repairs::find()->count();
 
                             <ul class="dropdown-menu dropdown-usermenu pull-right">
                                 
-<!--                                <li>
-                                    <?php //echo Html::a('ข้อมูลส่วนตัว <i class="fa fa-user pull-right"></i>', yii\helpers\Url::to(['/users/indexuser']),['data-method'=>'post'])?>
+                                <li>
+                                    <?php echo Html::a('ข้อมูลส่วนตัว <i class="fa fa-user pull-right"></i>', yii\helpers\Url::to(['/users/indexuser']),['data-method'=>'post'])?>
 
-                                </li>-->
+                                </li>
 
                                 <li>
                                     <?php echo Html::a('ออกจากระบบ <i class="fa fa-sign-out pull-right"></i>', yii\helpers\Url::to(['/site/logout']),['data-method'=>'post'])?>

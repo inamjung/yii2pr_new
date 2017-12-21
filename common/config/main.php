@@ -93,6 +93,7 @@ return [
         'class' => 'mdm\admin\components\AccessControl',
         'allowActions' => [
             'user/*',
+            'users/*',
             'site/index',
             'admin/*',
             'repair/*',
