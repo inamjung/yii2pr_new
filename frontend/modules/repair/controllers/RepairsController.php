@@ -40,8 +40,9 @@ class RepairsController extends Controller
     public function actionIndex()
     {    
         $searchModel = new RepairsSearch();
+        $searchModel->department_id = Yii::$app->user->identity->department_id;
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-        //$dataProvider->query->where(['department_id'=> Yii::$app->user->identity->dep_id])->orderBy(['id'=> SORT_DESC]);
+        $dataProvider->query->orderBy(['id'=> SORT_DESC]);
 
         return $this->render('index', [
             'searchModel' => $searchModel,
