@@ -116,14 +116,15 @@ public function actionIndexadmin()
                 $model->createDate  = date('Y-m-d');
                 $model->user_id =  Yii::$app->user->identity->id;
                 $model->save();
-                return [
-                    'forceReload'=>'#crud-datatable-pjax',
-                    'title'=> "Create new Repairs",
-                    'content'=>'<span class="text-success">Create Repairs success</span>',
-                    'footer'=> Html::button('Close',['class'=>'btn btn-default pull-left','data-dismiss'=>"modal"]).
-                            Html::a('Create More',['create'],['class'=>'btn btn-primary','role'=>'modal-remote'])
-        
-                ];         
+//                return [
+//                    'forceReload'=>'#crud-datatable-pjax',
+//                    'title'=> "Create new Repairs",
+//                    'content'=>'<span class="text-success">Create Repairs success</span>',
+//                    'footer'=> Html::button('Close',['class'=>'btn btn-default pull-left','data-dismiss'=>"modal"]).
+//                            Html::a('Create More',['create'],['class'=>'btn btn-primary','role'=>'modal-remote'])
+//        
+//                ]; 
+                return $this->redirect(['/repair/linebot/curl']);
             }else{           
                 return [
                     'title'=> "Create new Repairs",
