@@ -35,7 +35,7 @@ class LinebotController extends \yii\web\Controller {
 
     public function notify_message($message) {
         $line_api = 'https://notify-api.line.me/api/notify';
-        $line_token = 'SO54YZOsK8xw2zgGmsjJGpoMgoXTqHMQUCRmMuI1wUl'; // ใส่ token line
+        $line_token = ''; // ใส่ token line
         $queryData = array('message' => $message);
         $queryData = http_build_query($queryData, '', '&');
         $headerOptions = array(
