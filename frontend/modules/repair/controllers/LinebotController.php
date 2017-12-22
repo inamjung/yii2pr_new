@@ -23,7 +23,7 @@ class LinebotController extends \yii\web\Controller {
             $res = $this->notify_message($message);
         } else {
             if ($last_thread->last_id != $thread->id) {
-                $message = $thread->problem ;
+                $message = $thread->problem;
                 $res = $this->notify_message($message);
                 $last_thread->last_id = $thread->id;
                 $last_thread->save();
